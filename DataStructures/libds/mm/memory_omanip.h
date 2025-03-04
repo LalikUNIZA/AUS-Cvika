@@ -30,7 +30,7 @@ namespace ds::mm {
 		unsigned char* ptrB = (unsigned char*)(void*)ptr_;
 
 		for (size_t byte = 0; byte < sizeof(DataType); byte++, ptrB++) {
-			oss_ << "|" << (int)*ptrB;
+			oss_ << "|" << std::setfill('_') << std::setw(3) << (int)*ptrB;
 		}
 		oss_ << "|";
 	}

@@ -276,8 +276,8 @@ namespace ds::mm {
     template<typename BlockType>
     void CompactMemoryManager<BlockType>::print(std::ostream& os)
     {
-        os << "first = " << base_ << std::endl;
-        os << "last = " << end_ << std::endl;
+        os << "base = " << base_ << std::endl;
+        os << "end = " << end_ << std::endl;
         os << "limit = " << limit_ << std::endl;
         os << "block size = " << sizeof(BlockType) << "B" << std::endl;
 
@@ -288,10 +288,10 @@ namespace ds::mm {
             os << PtrPrintBin<BlockType>(ptr);
 
             if (ptr == base_) {
-                os << "<- first";
+                os << "<- base";
             }
             else if (ptr == end_) {
-                os << "<- last";
+                os << "<- end";
             }
             os << std::endl;
             ++ptr;
