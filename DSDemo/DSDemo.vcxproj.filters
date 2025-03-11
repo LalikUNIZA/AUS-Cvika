@@ -10,4 +10,9 @@
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="heapMonitor.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
