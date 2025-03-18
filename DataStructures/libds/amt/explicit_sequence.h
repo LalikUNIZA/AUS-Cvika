@@ -213,9 +213,15 @@ namespace ds::amt {
     template<typename BlockType>
     size_t ExplicitSequence<BlockType>::calculateIndex(BlockType& data)
     {
-        // TODO 04
-        // po implementacii vymazte vyhodenie vynimky!
-        throw std::runtime_error("Not implemented yet");
+        size_t result = 0;
+        BlockType block = accessFirst();
+
+        while (block != nullptr && block != &data) {
+            block = accessNext(block);
+            ++result;
+        }
+
+        return block != nullptr ? result : INVALID_INDEX;
     }
 
     template<typename BlockType>
